@@ -1,5 +1,5 @@
 # CadastroDeCampeonato
-API Rest com Cadastro de campeonato a partir das quartas de finais, realiza os jogos automáticamente com critério de penaltis no desempate!
+API Rest com Cadastro de campeonato a partir das quartas de finais, realiza os jogos automaticamente com critério de pênaltis no desempate!
 
 ## Como executar o projeto:
 - Clonar o Projeto
@@ -15,9 +15,6 @@ Update-Database
 
   <https://localhost:7052/swagger>
 
-
-
-
 ## Principais End-Points:
 - **POST** api/time : Cadastrar times na API
 - **POST** api/campeonato : Cadastrar campeonato na API
@@ -25,11 +22,11 @@ Update-Database
 - **POST** api/campeonato/gerar-campeonato : Gera um campeonato com as chaves, partidas e resultados com **pênaltis**, na API e retorna o time campeão (O campeonato só é gerado 1 vez, e caso tenha 8 times)
 - **GET** api/campeonato/historico-campeonato : Retorna um histórico das partidas ocorridas no campeonato escolhido
 - **GET** api/campeonato/pontuacao-time-campeonato : Retorna a pontuação baseadas em a cada 1 gol 1 ponto,de um time no campeonato
-- **GET** api/campeonato/campeao-campeonato : Retorna o time campeao do campeonato
+- **GET** api/campeonato/campeao-campeonato : Retorna o time campeão do campeonato
 
 ## Observações
 - Critério desempate por pênaltis
-Recebe os ids da PartidaTime, entra em um laço de cobrança de penaltis, retorna o id do time vencedor
+Recebe os ids da PartidaTime, entra em um laço de cobrança de pênaltis, retorna o id do time vencedor
 - Banco de dados
 Foi utilizado o Sqlite com os frameworks:
 ```
