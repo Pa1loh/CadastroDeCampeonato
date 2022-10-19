@@ -35,7 +35,9 @@ Foi utilizado o Sqlite com os frameworks:
  Microsoft.EntityFrameworkCore.Tools
 ```
 
+## Documentação api:
 
+<img align="center" alt="Paulo-dotnet" height="800" width="1000" src="https://github.com/Pa1loh/CadastroDeCampeonato/blob/master/ScreenShots/screen-shoot-swagger.png?raw=true">
 
 
 
