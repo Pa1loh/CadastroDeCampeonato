@@ -71,7 +71,7 @@ namespace CadastroDeCampeonato.Controllers
         [HttpPost]
         public async Task<ActionResult<Time>> PostTime(Time time)
         {
-            if (_timeRepository.GetEntityByName(time.nome) == null)
+            if (_timeRepository.GetEntityByName(time.nome).Result == null)
             {
                 await _timeRepository.Add(time);
                 return CreatedAtAction("GetTime", new { id = time.id }, time);

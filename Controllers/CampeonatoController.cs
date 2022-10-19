@@ -137,7 +137,7 @@ namespace CadastroDeCampeonato.Controllers
         {
             if (_campeonatoService.GetEntityByName(nomeCampeonato).Result == null)
                 return StatusCode(500, $"Erro: O campeonato {nomeCampeonato} não existe");
-            else if (_campeonatoService.ValidarCampeonato(nomeCampeonato))
+            else if (_campeonatoService.ValidarCampeonatoExistente(nomeCampeonato))
             {
                 List<PartidaTime> partidas = _campeonatoService.GerarCampeonato(nomeCampeonato).Result;
                 var timeCampeao = _campeonatoService.GetCampeao(nomeCampeonato).Result;
@@ -153,7 +153,7 @@ namespace CadastroDeCampeonato.Controllers
         {
             if (_campeonatoService.GetEntityByName(nomeCampeonato).Result == null)
                 return StatusCode(500, $"Erro: O campeonato {nomeCampeonato} não existe");
-            else if (_campeonatoService.ValidarCampeonato(nomeCampeonato))
+            else if (_campeonatoService.ValidarCampeonatoExistente(nomeCampeonato))
             {
                 List<PartidaTime> partidas = _campeonatoService.GetHistoricoCampeonato(nomeCampeonato).Result;
                 return StatusCode(200, $"Resultado do campeonato: {partidas.ToJson()}");

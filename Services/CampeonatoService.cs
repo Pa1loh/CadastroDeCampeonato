@@ -403,5 +403,16 @@ namespace CadastroDeCampeonato.Services
             var partidaTimeVencedora = partidaTime.FirstOrDefault(x => x.golsFeitos == golTimeCampeao);
             return _timeService.GetEntityById(partidaTimeVencedora.timeId);
         }
+
+        public bool ValidarCampeonatoExistente(string nomeCampeonato)
+        {
+            var campeonato = _campeonatoRepository.GetEntityByName(nomeCampeonato);
+            var campeonatoTime = _campeonatoTimeRepository.GetListTimesCampeonato(campeonato.Result.id);
+            var partida = _partidaRepository.GetEntityByCampeonatoId(campeonato.Result.id).Result;
+            if (campeonatoTime.Result.Count() == 8 && partida.Count > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }

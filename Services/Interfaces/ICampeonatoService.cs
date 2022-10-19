@@ -22,6 +22,6 @@ namespace CadastroDeCampeonato.Services.Interfaces
         bool ValidarTimeCadastrado(CampeonatoTimeDto campeonatoTime);
         bool ValidarTimeExistente(string nomeTime);
         Task<Time> GetCampeao(string nomeCampeonato);
-
+        bool ValidarCampeonatoExistente(string nomeCampeonato);
     }
 }
